@@ -11,7 +11,8 @@ dotenv.config();
 app.use(express.json());
 
 //phải đặt trước router
-connectDB(process.env.DB_URI);
+// connectDB(process.env.DB_URI);
+connectDB("mongodb+srv://huanlnvn:U4CG39duIDoX5vhc@cluster0.3i8uw.mongodb.net/WD18331");
 
 //router
 app.use('/api', productRouter);
