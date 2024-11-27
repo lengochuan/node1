@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const app = express();
-const path = require("path");
+// const path = require("path");
 
 app.get(`/`, function(req, res){
     res.send('Hello World');
