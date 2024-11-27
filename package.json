@@ -2,11 +2,14 @@
   "name": "node1",
   "version": "1.0.0",
   "main": "app.js",
+  "engines":{
+    "node": "22.11.0"
+  },
   "scripts": {
     "dev": "node app.js",
     "build": "node app.js",
     "serve": "node app.js",
-    "start": "node app.js ",
+    "start": "node app.js",
     "local": "node app.js"
   },
   "keywords": [],
