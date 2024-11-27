@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "set \"VITE_CJS_TRACE=true\" && vite build",
-    "serve": "vite preview",
-    "start": "npm ",
-    "local": "npm ./src/app.js"
+    "dev": "node app.js",
+    "build": "node app.js",
+    "serve": "node app.js",
+    "start": "node app.js ",
+    "local": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +21,6 @@
   },
   "devDependencies": {
     "vite-plugin-node": "^4.0.0"
-  }
+  },
+  "type": "module"
 }

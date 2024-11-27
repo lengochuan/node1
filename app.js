@@ -1,7 +1,7 @@
 import express from 'express';
-import homeRouter from './routers/home';
-import productRouter from './routers/product';
-import { connectDB } from './config/db';
+import homeRouter from './src/routers/home.js';
+import productRouter from './src/routers/product.js';
+import { connectDB } from './src/config/db.js';
 import dotenv from 'dotenv';
 
 const app = express();
@@ -19,4 +19,12 @@ connectDB("mongodb+srv://huanlnvn:U4CG39duIDoX5vhc@cluster0.3i8uw.mongodb.net/WD
 app.use('/', homeRouter);
 app.use('/api', productRouter);
 
-export const viteNodeApp = app;
+// export const viteNodeApp = app;
+
+app.listen(process.env.PORT || 8080, function(){
+    console.log("process.env.PORT");
+    console.log(process.env.PORT); 
+})
+
+console.log("process.env.PORT");
+console.log(process.env.PORT);
