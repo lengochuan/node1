@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-app.get(`/home`, function(req, res){
+app.get(`/`, function(req, res){
     res.send('Hello World');
 })
 
