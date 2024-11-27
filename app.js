@@ -2,11 +2,11 @@ import express from 'express';
 import homeRouter from './src/routers/home.js';
 import productRouter from './src/routers/product.js';
 import { connectDB } from './src/config/db.js';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 const app = express();
 //middleware chạy trước tất cả router nên cần load lên trước => mục đích lấy biến từ file .env ra để sử dụng;
-// dotenv.config();
+dotenv.config();
 
 //middleware => mục đích là parse dữ liệu ra json khi nhận request;
 app.use(express.json());
@@ -24,11 +24,3 @@ app.use('/api', productRouter);
 app.listen(process.env.PORT || 8080, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
-// app.listen(process.env.PORT || 8080, function(){
-//     console.log("process.env.PORT");
-//     console.log(process.env.PORT); 
-// })
-
-console.log("process.env.PORT");
-console.log(process.env.PORT);
