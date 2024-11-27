@@ -1,4 +1,5 @@
 import express from 'express';
+import homeRouter from './routers/home';
 import productRouter from './routers/product';
 import { connectDB } from './config/db';
 import dotenv from 'dotenv';
@@ -15,6 +16,7 @@ app.use(express.json());
 connectDB("mongodb+srv://huanlnvn:U4CG39duIDoX5vhc@cluster0.3i8uw.mongodb.net/WD18331");
 
 //router
+app.use('/', homeRouter);
 app.use('/api', productRouter);
 
 export const viteNodeApp = app;
