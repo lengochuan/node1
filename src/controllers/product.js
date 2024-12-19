@@ -5,7 +5,8 @@ export const getProducts = async (req, res) =>{
     try {
         const data =  await Product.find().sort( { name: 1 } );
         // res.status(200).json(data);
-        res.send(data);
+        // res.send(data);
+        res.render('product/index', {'lProduct':data});
     } catch (error) {
         console.log(error);
     }
