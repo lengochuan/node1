@@ -5,12 +5,14 @@ import productRouter from './routers/product';
 import { connectDB } from './config/db';
 import dotenv from 'dotenv';
 
+
 const app = express();
 //middleware chạy trước tất cả router nên cần load lên trước => mục đích lấy biến từ file .env ra để sử dụng;
 dotenv.config();
 
 //middleware => mục đích là parse dữ liệu ra json khi nhận request;
-// app.use(express.json());
+app.use(express.json());
+
 app
 .set('views', 'src/views')
 .set('view engine', 'ejs')
