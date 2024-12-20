@@ -5,16 +5,16 @@ const userSchema = new mongoose.Schema({
             type: String
         },
     password: {
-        type: Number
+        type: String
+    },
+    email: {
+        type: String
     },
     age: {
         type: Number
     },
-    gender: {
-        type: Number
-    },
     birthday: {
-        type: Number
+        type: String
     }
 },{
     timestamps: true, versionKey: false
