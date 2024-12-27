@@ -13,13 +13,15 @@ export const userPageSignInSubmit = async (req, res) =>{
     
     try {
 
-        // console.log("username:" + username);
+        console.log("username:" + username);
         // console.log("password:" + password);
         const dUser = await User.findOne({ "username":username });
         
         if( !dUser ){
             res.render('home/failed', {'msg': "Username không tồn tại!"});
         }else{
+            console.log("flag lỗi 1");
+
             const isValidePassWord = await bcryptjs.compare(password, dUser.password);
             if( isValidePassWord ){
 
