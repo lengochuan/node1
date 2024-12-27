@@ -64,40 +64,9 @@ export const userPageSignUpSubmit = async (req, res) =>{
 
 }
 
-//reset password
-export const userPageReset = async (req, res) =>{
-    // res.send('Hello World');
-    res.render('user/reset');
-}
-
-//submit reset password
-export const userPageResetSubmit = async (req, res) =>{
-    const { password } = req.body;
-
-    console.log("Thử nghiệm 5");
-    try {
-        console.log("password:" + password);
-        
-        const _hashPassword = await bcryptjs.hash(password, 10);
-        req.body.password = _hashPassword;
-        const data =  await User(req.body).save();
-        res.render('home/success', {'msg': "Đăng ký thành công!", "data": data});
-        
-    } catch (error) {
-        console.log(error);
-        res.render('home/failed', {'msg': "Lỗi kết nối cơ sở dữ liệu!"});
-    }
-
-}
-
-//submit reset password
+//signOut
 export const userPageSignOut = async (req, res) =>{
     req.session.destroy(function(err) {
         return  res.redirect('/');
     })
-}
-//page info user
-export const userPageInfo = async (req, res) =>{
-    // res.send('Hello World');
-    res.render('user/info');
 }
