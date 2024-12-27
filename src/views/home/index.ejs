@@ -249,9 +249,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm'
       </ul>
     </div>
   </li>
-  <li class="nav-link">
-    <a target="_self" href="/signin" title="Đăng nhập">Đăng nhập</a>
-  </li>
+  
   <li class="nav-link depth-1">
     <div class="title">
       <a href="https://itc.edu.vn/thong-tin/thong-bao-hoc-vu" target="_self" title="Thông tin">Thông tin</a>
@@ -283,6 +281,28 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm'
         </li>
       </ul>
     </div>
+  </li>
+  <li class="nav-link depth-1">
+    <% if( dUser && dUser.username && dUser.username != ''){ %>
+
+      <div class="title">
+        Xin chào, <b><%= dUser.username %></b>
+        <em class="far fa-chevron-down">
+        </em>
+      </div>
+      <div class="depth-wrap wrapper">
+        <ul>
+          <li>
+            <a target="_self" href="/user_info" title="Tài khoản của tôi">Tài khoản của tôi</a>
+          </li>
+          <li>
+            <a target="_self" href="/signout" title="Thoát">Thoát</a>
+          </li>
+        </ul>
+      </div>
+    <% } else{ %>  
+      <a target="_self" href="/signin" title="Đăng nhập">Đăng nhập</a>
+   <% } %>
   </li>
 </ul></div></div>
 							</div>
